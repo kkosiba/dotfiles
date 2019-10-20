@@ -1,0 +1,41 @@
+https://www.archlinux.org/feeds/news/
+
+## Reddit
+#/r/manga/
+https://www.reddit.com/r/manga/.rss reddit "~/r/Manga"
+#/r/anime/
+https://www.reddit.com/r/anime/.rss reddit "~/r/Anime"
+
+## Manga
+# 5Toubun no Hanayome
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/20679 manga "~5Toubun no Hanayome"
+# YURAGI-SOU NO YUUNA-SAN
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/18258 manga "~Yuragi-sou no Yuuna-san"
+# Fairy Tail: 100 Years Quest
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/29270 manga "~Fairy Tail: 100 Years Quest"
+# Kimetsu no Yaiba
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/18198 manga "~Kimetsu no Yaiba"
+# Black Lagoon
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/1230 manga "~Black Lagoon"
+# Boruto
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/23105 manga "~Boruto"
+# One Piece
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/39 manga "~One Piece"
+# Kenja no Mago
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/18964 manga "~Kenja no Mago"
+
+# Sokushi Cheat ga Saikyou Sugite, Isekai no Yatsura ga Marude Aite ni Naranai n desu ga Japanese
+https://mangadex.org/rss/6QaRfHrY5hncdD7Zm3MKqUk84uVsX29g/manga_id/24281 manga "~Instant Death"
+
+# PhD Comics
+http://phdcomics.com/gradfeed.php
+
+## YouTube Feeds
+# Abroad in Japan
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHL9bfHTxCMi-7vfxQ-AYtg youtube
+# Kurzgesagt – In a Nutshell
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q youtube
+# Pod Mikroskopem
+https://www.youtube.com/feeds/videos.xml?channel_id=UCnAX2kPJ32Kyvr-BfTnDjkQ youtube
+# agadmator's Chess Channel
+https://www.youtube.com/feeds/videos.xml?channel_id=UCL5YbN5WLFD8dLIegT5QAbA youtube

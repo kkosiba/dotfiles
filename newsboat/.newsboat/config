@@ -1,0 +1,31 @@
+color background         default   default
+color listnormal         default   default
+color listnormal_unread  default   default
+color listfocus          black     yellow
+color listfocus_unread   black     yellow
+color info               default   black
+color article            default   default
+
+# highlights
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default
+
+browser				"chromium"
+# player        		"mpv"
+download-path   		"~/Downloads/%n"
+save-path       		"~/Downloads"
+reload-threads  		20
+cleanup-on-quit 		yes
+# text-width			80
+auto-reload			yes
+reload-time			10
+delete-read-articles-on-quit	yes
+bind-key q quit
+
+bind-key G end
+bind-key g home
+bind-key j down
+bind-key k up
+
+confirm-exit			yes
