@@ -1,0 +1,9 @@
+[submodule "vim/.vim/pack/dist/start/vim-signature"]
+	path = vim/.vim/pack/dist/start/vim-signature
+	url = https://github.com/kshenoy/vim-signature
+[submodule "vim/.vim/pack/dist/start/gruvbox"]
+	path = vim/.vim/pack/dist/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "vim/.vim/pack/dist/start/vim-airline"]
+	path = vim/.vim/pack/dist/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
