@@ -1,20 +1,5 @@
-set nocompatible              " be improved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'morhetz/gruvbox' " gruvbox theme
 colorscheme gruvbox
 set background=dark	 " dark gruvbox variant
-
-Plugin 'vim-airline/vim-airline'
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
