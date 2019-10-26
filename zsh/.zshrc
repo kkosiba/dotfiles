@@ -7,12 +7,16 @@ export ZSH="/home/kamil/.oh-my-zsh"
 # Set fzf installation directory path
 export FZF_BASE=/usr/bin/fzf
 
-if [[ -f ~/.dircolors ]]; then 
+if [[ -f ~/.dircolors ]]; then
     eval $(dircolors -b ~/.dircolors)
 elif [[ -f /etc/DIR_COLORS ]]; then
     eval $(dircolors -b /etc/DIR_COLORS)
 fi
 
+if [ -n "$DESKTOP_SESSION" ]; then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
 # Uncomment the following line to disable fuzzy completion
 # export DISABLE_FZF_AUTO_COMPLETION="true"
 
