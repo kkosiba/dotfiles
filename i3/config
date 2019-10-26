@@ -10,11 +10,7 @@
 #
 
 # Set Modifier to Windows key
-set $mod Mod1
-set $winMod Mod4
-
-# Borders
-default_border pixel 3
+set $mod Mod4
 
 # Colors
 # class                 border  bground text    indicator child_border
@@ -29,13 +25,16 @@ client.background       #FFFFFF
 # exec --no-startup-id compton -cCGb --backend glx --vsync opengl
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/config
+exec_always --no-startup-id $HOME/.config/polybar/polybar_launcher.sh
+
+# Redshift
+#exec_always --no-startup-id redshift
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Documents/Pictures/wallpaper.jpg
 
 #font
-font Ubuntu Mono 12
+font pango:Ubuntu Mono 12
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -59,7 +58,7 @@ bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+$left focus left
@@ -166,9 +165,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list short sinks | head -n1 | cut -f1) toggle
 
 # Sreen brightness controls
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # DECREASE SCREEN BRIghtness
 
+# Gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 10
+gaps outer 5
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -195,3 +198,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Keyboard settings
+exec_always setxkbmap -layout gb -option caps:escape
