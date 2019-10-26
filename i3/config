@@ -152,7 +152,11 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Lock the screen
-bindsym $winMod+l exec "i3lock -t -i /home/jforest/Pictures/l_fb_10_big.png"
+bindsym $mod+shift+x exec betterlockscreen -l dim
+# set desktop background with custom effect
+exec --no-startup-id betterlockscreen -w dim
+# Alternative (set last used background)
+exec --no-startup-id source $HOME/.fehbg
 
 # Multimedia Keys - Sound and Backlight
 
