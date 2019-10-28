@@ -201,3 +201,5 @@ bindsym $mod+r mode "resize"
 
 # Keyboard settings
 exec_always setxkbmap -layout gb -option caps:escape
+exec xrdb -merge ~/.Xresources
+exec xrandr --dpi 133
