@@ -12,17 +12,40 @@
 # Set Modifier to Windows key
 set $mod Mod4
 
+# Gruvbox colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
 # Colors
 # class                 border  bground text    indicator child_border
-client.focused          #FF1058 #003DA5 #FFFFFF #2D99ED   #FF1058
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
-client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
-client.background       #FFFFFF
+#client.focused          #FF1058 #003DA5 #FFFFFF #2D99ED   #FF1058
+#client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+#client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+#client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+#client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+#client.background       #FFFFFF
 
-# Compton
-# exec --no-startup-id compton -cCGb --backend glx --vsync opengl
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $green $green $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $blue $blue $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/polybar_launcher.sh
@@ -34,7 +57,7 @@ exec_always --no-startup-id $HOME/.config/polybar/polybar_launcher.sh
 exec_always --no-startup-id feh --bg-fill $HOME/Documents/Pictures/wallpaper.jpg
 
 #font
-font pango:Ubuntu Mono 12
+font pango:Ubuntu 12
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -47,13 +70,16 @@ font pango:Ubuntu Mono 12
 floating_modifier $mod
 
 # start suckless terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec --no-startup-id st zsh
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
+
+# start rofi launcher
+bindsym $mod+space exec --no-startup-id rofi -show run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -101,7 +127,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -117,28 +143,43 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "10"
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# Assign app to workspace
+assign [class="Chromium"] $ws1
+assign [class="Thunderbird"] $ws2
 
 # move workspace to different monitor
 bindsym $mod+m move workspace to output right
@@ -151,7 +192,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Lock the screen
-bindsym $mod+shift+x exec betterlockscreen -l dim
+bindsym $mod+l exec --no-startup-id betterlockscreen -l dim
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -w dim
 # Alternative (set last used background)
@@ -165,11 +206,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list short sinks | head -n1 | cut -f1) toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # DECREASE SCREEN BRIghtness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 # decrease screen brightness
 
 # Gaps
 for_window [class="^.*"] border pixel 2
+smart_gaps on # only enable gaps on a workspace when there is at least one container
 gaps inner 10
 gaps outer 5
 
@@ -200,6 +242,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Keyboard settings
-exec_always setxkbmap -layout gb -option caps:escape
-exec xrdb -merge ~/.Xresources
-exec xrandr --dpi 133
+exec_always --no-startup-id setxkbmap -layout gb -option caps:escape
+exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id xrandr --dpi 133
