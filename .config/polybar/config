@@ -24,7 +24,7 @@ override-redirect = false
 ; FONTS ;
 ;-------;
 
-font-0 = "Hack:size=14;3"
+font-0 = "Meslo:size=16;3"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
@@ -46,9 +46,11 @@ padding-left = 2
 padding-right = 2
 module-margin = 1.5
 
-modules-left = volume backlight battery
+modules-left = volume backlight battery0 battery1
 modules-center = i3
-modules-right = wireless-network wired-network cpu date time
+modules-right = wireless-network wired-network date time
+
+separator = "|"
 
 tray-position = none
 tray-detached = true
@@ -134,14 +136,37 @@ date =  %a %e %b
 label = %date%
 
 
-[module/battery]
+[module/battery0]
+type = internal/battery
+
+battery = BAT0
+
+poll-interval = 1
+
+full-at = 100
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging =  <label-charging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/battery1]
 type = internal/battery
 
 battery = BAT1
 
 poll-interval = 1
 
-full-at = 95
+full-at = 100
 
 label-discharging = %percentage%%
 label-charging = %percentage%%
@@ -231,10 +256,3 @@ type = internal/network
 interface = wlp2s0
 label-connected =  %downspeed% |  %upspeed%
 
-[bar/float]
-
-inherit = bar/example
-
-background = #ffffff
-
-tray-position = center
