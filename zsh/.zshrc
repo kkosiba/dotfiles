@@ -1,11 +1,11 @@
-# If you come from bash you might have to change your $PATH.
+# Exports
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/home/kamil/.oh-my-zsh"
-
-# Set fzf installation directory path
-export FZF_BASE=/usr/bin/fzf
+export EDITOR="vim"
+export TERMINAL="st"
+export READER="zathura"
+export FILE="ranger"
+export ZSH="/home/kamil/.oh-my-zsh" # Path to your oh-my-zsh installation.
+export FZF_BASE=/usr/bin/fzf # Set fzf installation directory path
 
 if [[ -f ~/.dircolors ]]; then
     eval $(dircolors -b ~/.dircolors)
@@ -17,6 +17,8 @@ if [ -n "$DESKTOP_SESSION" ]; then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+
+
 # Uncomment the following line to disable fuzzy completion
 # export DISABLE_FZF_AUTO_COMPLETION="true"
 
@@ -83,9 +85,12 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf archlinux) #django docker)
+plugins=(git fzf archlinux shrink-path) #django docker)
 
 source $ZSH/oh-my-zsh.sh
+
+#setopt prompt_subst
+#PS1='%n@%m $(shrink_path -s)>'
 
 # User configuration
 
@@ -96,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black '%2~'
+  prompt_segment blue black $(shrink_path -f) #'%2~'
 }
 prompt_context() {}
 
