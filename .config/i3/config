@@ -34,17 +34,17 @@ set $darkgray #1d2021
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $green $green $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-client.urgent           $red $red $white $red $red
-
-# blue gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $blue $blue $darkgray $purple $darkgray
+#client.focused          $green $green $darkgray $purple $darkgray
 #client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 #client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 #client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
 
 
 # Polybar
@@ -57,7 +57,7 @@ exec_always --no-startup-id $HOME/.config/polybar/polybar_launcher.sh
 exec_always --no-startup-id feh --bg-fill $HOME/Documents/Pictures/wallpaper.jpg
 
 #font
-font pango:Ubuntu 12
+font pango:Source Sans Pro Semibold 12
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -65,6 +65,8 @@ font pango:Ubuntu 12
 # set $down k
 # set $left j
 # set $right l
+
+bindsym $mod+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -154,9 +156,9 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws0
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "web"
+set $ws2 "mail"
+set $ws3 "term"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -178,8 +180,9 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
 # Assign app to workspace
-assign [class="Chromium"] $ws1
+assign [class="Firefox"] $ws1
 assign [class="Thunderbird"] $ws2
+assign [class="St"] $ws3
 
 # move workspace to different monitor
 bindsym $mod+m move workspace to output right
@@ -192,11 +195,11 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Lock the screen
-bindsym $mod+l exec --no-startup-id betterlockscreen -l dim
+#bindsym $mod+l exec --no-startup-id betterlockscreen -l dim
 # set desktop background with custom effect
-exec --no-startup-id betterlockscreen -w dim
+#exec --no-startup-id betterlockscreen -w dim
 # Alternative (set last used background)
-exec --no-startup-id source $HOME/.fehbg
+#exec --no-startup-id source $HOME/.fehbg
 
 # Multimedia Keys - Sound and Backlight
 
@@ -245,3 +248,19 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id setxkbmap -layout gb -option caps:escape
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id xrandr --dpi 133
+
+# Other
+exec_always --no-startup-id dropbox
+
+set $mode_system System (l) lock, (e) logout, (r) reboot, (p) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id betterlockscreen -l dim, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+m mode "$mode_system"
