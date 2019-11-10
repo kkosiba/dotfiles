@@ -24,7 +24,7 @@ override-redirect = false
 ; FONTS ;
 ;-------;
 
-font-0 = "Source Sans Pro:size=16;3"
+font-0 = "Source Sans Pro Semibold:size=16;3"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
@@ -33,9 +33,9 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 ; COLORS ;
 ;--------;
 
-background = 0
-foreground = #c5a9f9
-border-color = 0
+background = #282828
+foreground = #ebdbb2
+border-color = #282828
 
 ;---------------;
 ; MISCELLANEOUS ;
@@ -119,9 +119,16 @@ pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 
-label-unfocused-foreground = #afafaf
-label-focused-foreground = #c5a9f9
-label-urgent-foreground = #ff0000
+label-unfocused-foreground = #ebdbb2
+label-focused-foreground = #d79921
+label-urgent-foreground = #cc241d
+
+index-sort = true
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #fbf1c7
 
 [module/time]
 type = internal/date
