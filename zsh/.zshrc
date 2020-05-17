@@ -1,11 +1,16 @@
 # Exports
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
 export EDITOR="vim"
-export TERMINAL="st"
 export READER="zathura"
 export FILE="ranger"
 export ZSH="/home/kamil/.oh-my-zsh" # Path to your oh-my-zsh installation.
 export FZF_BASE=/usr/bin/fzf # Set fzf installation directory path
+
 
 if [[ -f ~/.dircolors ]]; then
     eval $(dircolors -b ~/.dircolors)
@@ -40,11 +45,11 @@ ZSH_THEME="agnoster"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -59,7 +64,7 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -85,7 +90,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf archlinux shrink-path) #django docker)
+plugins=(git fzf archlinux shrink-path docker) #django)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,3 +131,4 @@ prompt_context() {}
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias docker="sudo docker "
