@@ -1,0 +1,17 @@
+include /usr/share/doc/newsboat/contrib/colorschemes/plain
+
+browser                      "librewolf"
+reload-threads               20
+cleanup-on-quit              yes
+auto-reload                  yes
+reload-time                  10
+
+bind-key q quit
+bind-key G end
+bind-key g home
+bind-key j down
+bind-key k up
+
+confirm-exit                 no
+confirm-mark-all-feeds-read  no
+delete-read-articles-on-quit yes

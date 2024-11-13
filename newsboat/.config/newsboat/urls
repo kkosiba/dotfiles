@@ -1,0 +1,21 @@
+https://www.archlinux.org/feeds/news/
+
+# BBC
+https://feeds.bbci.co.uk/news/world/rss.xml news bbc world "~BBC World News"
+https://feeds.bbci.co.uk/news/health/rss.xml news bbc health "~BBC Health News"
+https://feeds.bbci.co.uk/news/technology/rss.xml news bbc technology "~BBC Tech News"
+
+# YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q youtube "~Kurzgesagt"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA youtube "~Veritasium"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0p5jTq6Xx_DosDFxVXnWaQ youtube "~The Economist"
+
+# Dev
+https://hynek.me/index.xml dev blog "~Hynek's Blog"
+https://www.tedinski.com/feed.xml dev blog "~Ted Kaminski's Blog"
+https://blog.jbrains.ca/feed.xml dev blog "~J. B. Rainsberger's Blog"
+https://talkpython.fm/episodes/rss podcast dev python "~TalkPython Podcast"
+https://world.hey.com/dhh/feed.atom "~David Heinemeier Hanson"
+
+# Hacker News
+https://news.ycombinator.com/rss "~Hacker News"
