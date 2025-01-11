@@ -155,6 +155,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="LibreWolf"] $ws1
 assign [class="kitty"] $ws2
 assign [class="thunderbird"] $ws3
+assign [class="keepassxc"] $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
