@@ -228,7 +228,7 @@ bindsym Mod1+Shift+l exec i3lock --image ~/Pictures/BlossomsCatppuccin.png
 # Autodetect screen setup
 exec --no-startup-id autorandr --cycle
 # Redlight
-exec --no-startup-id redshift -O 5000
+exec_always --no-startup-id redshift-gtk
 # hidpi scaling
 exec --no-startup-id xrdb ~/.Xresources
 # polybar
