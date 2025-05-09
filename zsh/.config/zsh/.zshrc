@@ -2,7 +2,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -95,6 +95,26 @@ prompt_context() {}
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias cat="bat"
+alias ls="eza"
+alias ll="eza -l"
+alias la="eza -la"
+alias tree="eza --tree"
+alias cgbn="git rev-parse --abbrev-ref HEAD | pbcopy" # pbcopy is macOS-specific tool
+alias "lazygit"="CONFIG_DIR=$HOME/.config/lazygit lazygit"
+
+export WORKON_HOME=$HOME/.virtualenvs
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+elif [[ -f /opt/homebrew/bin/virtualenvwrapper.sh ]]; then
+  source /opt/homebrew/bin/virtualenvwrapper.sh
+fi
+
+# Enable CTRL+x+e to edit command line in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
 
 # Bind Ctrl+f to tmux-sessionizer.sh script
 bindkey -s '^F' '~/.local/bin/tmux-sessionizer.sh\n'
