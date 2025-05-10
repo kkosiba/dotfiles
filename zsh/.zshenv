@@ -9,7 +9,7 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONFIG_DIRS="/etc/xdg"
 
 # Default software
-export TERMINAL="kitty"
+export TERMINAL="ghostty"
 export EDITOR="nvim"
 export BROWSER="librewolf"
 export FZF_BASE=$(command -v fzf)
