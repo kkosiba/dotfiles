@@ -104,7 +104,9 @@ alias cgbn="git rev-parse --abbrev-ref HEAD | pbcopy" # pbcopy is macOS-specific
 alias "lazygit"="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 
 export WORKON_HOME=$HOME/.virtualenvs
-if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
+  source /usr/bin/virtualenvwrapper.sh
+elif [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
 elif [[ -f /opt/homebrew/bin/virtualenvwrapper.sh ]]; then
   source /opt/homebrew/bin/virtualenvwrapper.sh
@@ -118,5 +120,22 @@ bindkey '^xe' edit-command-line
 
 # Bind Ctrl+f to tmux-sessionizer.sh script
 bindkey -s '^F' '~/.local/bin/tmux-sessionizer.sh\n'
+
+function activate_venv() {
+  if [[ $# -eq 1 ]]; then
+    selected=$1
+  else
+    selected=$(find "${WORKON_HOME}" -mindepth 1 -maxdepth 1 -type d | fzf)
+  fi
+
+  if [[ -z $selected ]]; then
+    echo "No selection. Aborting"
+    return
+  fi
+
+  source "${selected}/bin/activate"
+}
+# Activate venv from $WORKON_HOME with fzf on Ctrl+v
+bindkey -s '^V' 'activate_venv\n'
 
 . "$HOME/.cargo/env"
