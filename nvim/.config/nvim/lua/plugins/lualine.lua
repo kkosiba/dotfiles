@@ -23,11 +23,17 @@ return {
 		local opts = {
 			options = {
 				theme = "auto",
+				component_separators = "",
+				section_separators = "",
 				globalstatus = vim.o.laststatus == 3,
 				disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
 			},
 			sections = {
-				lualine_a = { "mode" },
+				lualine_a = {
+					function()
+						return string.upper(string.sub(vim.fn.mode(), 1, 1)) -- First letter of the mode
+					end,
+				},
 				lualine_b = { "branch" },
 
 				lualine_c = {
