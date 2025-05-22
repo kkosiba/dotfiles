@@ -1,4 +1,4 @@
 git:
   commitPrefix:
     pattern: "^(\\w+-\\w+)[-_].*"
-    replace: '$1 '
+    replace: "$1 "
