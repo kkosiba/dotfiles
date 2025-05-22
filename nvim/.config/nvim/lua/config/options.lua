@@ -49,9 +49,6 @@ vim.opt.colorcolumn = "120"
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Disable snacks animations
-vim.g.snacks_animate = false
-
 -- Language-specific settings
 
 -- LSP Server to use for Python.
