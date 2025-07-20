@@ -1,0 +1,175 @@
+{
+  // Workbench settings
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.list.openMode": "doubleClick",
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
+  "workbench.view.showQuietly": {
+    "workbench.panel.output": true
+  },
+  // Editor settings
+  "editor.cursorBlinking": "solid",
+  "editor.fontSize": 17,
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "Iosevka, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.cursorStyle": "block",
+  "editor.lineNumbers": "relative",
+  // VIM settings
+  "vim.smartRelativeLine": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.navigateBack"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.navigateForward"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
+    },
+    {
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        "search.action.openEditor"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "d"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "d"
+      ],
+      "commands": [
+        "editor.action.peekDefinition",
+        "togglePeekWidgetFocus"
+      ]
+    },
+    // Bookmarks (requires extension)
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "t"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "l"
+      ],
+      "commands": [
+        "bookmarks.listFromAllFiles"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  // Other settings
+  "remote.autoForwardPortsSource": "hybrid",
+  "git.enabled": false,
+  // "git.autofetch": false,
+  // "git.blame.editorDecoration.enabled": true,
+  // "git.blame.statusBarItem.enabled": false,
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.fontSize": 17,
+  "extensions.ignoreRecommendations": true,
+  "chat.editor.fontSize": 17
+}
