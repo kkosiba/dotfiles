@@ -346,7 +346,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 #
 #   - macOS: titlebar tabs style is not updated when switching themes.
 #
-theme = rose-pine-moon
+theme = GruvboxDark
 
 # Background color for the window.
 # background = #282c34
